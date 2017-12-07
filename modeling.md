@@ -12,9 +12,7 @@ nav_include: 2
 ## Modeling Approach and Project Trajectory 
 
 1. The Longitudinal nature of the data was not accounted for. This meant removing all ‘baseline’ measures and treating each row as a unique data point. The way we dealt with missing values was imputation with medians, which was mentioned in class as the most effective way of dealing with missingness. The Diagnosis column (DX) was an ordinal variable, and it was accordingly dealt with by mapping values to 0-2. Other categorical variables were one-hot encoded.
-
 2. The next step was to run regressions using each cognitive test as a response variable and the rest of the features (including DX) as predictors. This ensured the we are predicting how well a certain test correlates with the other tests, given the diagnosis. 
-
 3. We then used the R2 scores for each regression to decide which model is the best. Initially we thought that there would be a clear winner both in terms of the diagnostic test as well as the regression model. But on running the models, there were three combinations of test + model that offered comparable performances – ADAS11 (Random Forest), ECogPT (Linear Regression, RidgeCV, and Random Forest) and ECogSP (Linear Regression, RidgeCV, and Random Forest). First we checked the tests for any correlation, since that may have caused the close results. After making a pairplot and heatmap, we realised the tests weren’t sufficiently correlated and we would need to find a way to account for the separate tests. We then decided to create a combined meta-score using these seven test + model predicted scores, weighting each predicted score with the R-squared value, using the following formula:
 
     **Combined Score = S $R^2$*(Predicted Score)**
@@ -22,16 +20,12 @@ nav_include: 2
     This was a major change in the way we expected to construct the meta-test, and we had to take a decision based on our mathematical understanding of these models about how to weight the score of each test. We were also referencing the literature on Characterizing Alzheimer's disease using a hypometabolic convergence index (HCI), which helped us in formulating our meta-indicator.
 
 4. Added the predictions of the best model as a new column(‘meta test’)
-
 5. We then ran a classification using DX values as the classes and the ‘meta test’ as a predictor. Here we ran a number of classification models to determine which gave the best classification accuracy. Out of 4 models (AdaBoost, Logistic Regression, Random Forest Classifier, and Logistic Regression with quadratic terms), Adaboost proved to give the best results. **The classification accuracy rates were .66, .84, and .69 for CN, MCI, and Dementia, respectively. This far out performs a base classifier based on random chance alone.**
-
 6. The results of the classification were then used to show where the classification boundaries are along the scale of the ‘meta test’. While doing this classification, we realised that while our meta-score was reasonably adept at handling the classification of CN and ‘Dementia’, the MCI category was still messy. This meant that there was a lot of ‘bleeding’ into MCI both from the ‘CN’ class and the ‘Dementia’ class. This was problematic, especially on the CN-MCI side, because if a patient actually has MCI and is diagnosed as ‘Cognitively Normal’, no further tests might be conducted. On the Alzheimer’s side, it is still a problem, but the stakes are perhaps not as high. Therefore a need was identified to conducted an additional layer of tests.
-
 7. The range for which MCI was messy was for the meta-test score between 10 and 25. As mentioned, there was considerable bleeding into MCI from both ‘CN’ and ‘Dementia’. We had expected to see some of this on the basis of our initial EDA. We needed to make a decision on how to resolve this issue. The following steps describe the technique we adopted:
   - We queried the full-set for all data-points where our test scored in that range and then re-ran the initial regression to generate an R2 matrix to determine if there were any new tests that performed much better on this filtered range, and indeed ADAS13 emerged as a new test that performed better than other tests specifically on this messy MCI range, and it hadn’t surfaced earlier on the entire dataset.
   - We then reran the classification with Adaboost to see if the MCI class was better classified now, and ADAS13 was indeed showing a better classification accuracy.
   - Based on the ADAS13 score, we were able to identify the second layer of classification categories  (see figure below)
-
 8. We finally generated the dataset with the predicted classifications.
 
 
@@ -504,7 +498,7 @@ score_df.plot(kind="bar")
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1153392b0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x119170080>
 
 
 
@@ -975,7 +969,7 @@ sns.swarmplot(x="MetaTest", y="DX", data=meta_dx.head(1000),order=['CN','MCI','D
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x115cf7860>
+    <matplotlib.axes._subplots.AxesSubplot at 0x11916cf98>
 
 
 
@@ -1175,7 +1169,7 @@ sns.swarmplot(x="MetaTest", y="Preds",hue="DX", data=meta_dx.head(5000),order=['
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x115ced898>
+    <matplotlib.axes._subplots.AxesSubplot at 0x117d3f710>
 
 
 
@@ -1586,7 +1580,7 @@ sns.swarmplot(x="ADAS13", y="ADAS13Preds",hue="DX_class", data=mci_df.head(2000)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x11c91da58>
+    <matplotlib.axes._subplots.AxesSubplot at 0x11b544eb8>
 
 
 
