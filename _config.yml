@@ -1,6 +1,6 @@
 theme: jekyll-theme-primer
 title: Home  #Support Vector Olives
-description: Keeping Italian Olives Pure!
+description: CS109A Group 73 Project
 baseurl:
 markdown: kramdown
 kramdown:
