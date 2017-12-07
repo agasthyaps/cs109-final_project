@@ -11,13 +11,13 @@ nav_include: 1
 
 ## Introduction and Description of Data
 
-<hr/>
-
 This morning’s (07 December 2017) Daily Mail reports that Rate of Alzheimer's disease will more than DOUBLE in America by 2060, based on a study by UCLA. a This means 3.8 million Americans may have Alzheimer’s disease, at a cost of $1.1 trillion per year. Contrast this state with the fact that the diagnosis of Alzheimer’s is still not a sure science; there is a horde of diagnostic tests, none of which can identify with confidence.
 
 Our data is obatained from the **Alzheimer’s Disease Neuroimaging Initiative (ADNI)**. It consists of the diagnosis of various patients (with their demographic information) who were tested for AD over different periods of time, using three testing protocols - ADNI1, ADNI GO and ADNI2. 
 
-<hr>
+<br/> <br/>
+
+
 
 **EDA Overview**
 
@@ -35,16 +35,25 @@ We began by conducting basic EDA and asking questions on the basis of the variou
   meta -test
 7. Confidence
 
-<hr>
+<br/> <br/>
+
+
 
 **Insight from Data and Methods Used**
 
 Through preliminary EDA, we realised that the need to deal with longitudinal data. We thought that to deal with this data, we would need to see how the different test scores varied for the same patients over time, especially for patients with the maximum count of diagnosis over time. For most tests, the values were pretty static and we decided to use the last test score. The next issue was dealing with Nans. There were some puzzling instances of Nans (for instance, DX is Nan when DX_baseline is not or vice versa), so for preliminary EDA we decided to drop those values. However, in the future we can use classification based on correlated parameters to impute values for NaNs.
 
 At the end, we got a sense of which tests, demographics and markers are correlated. It also helped us gauge the complexity of dealing with longitudinal data. Post-EDA, we also began to understand the need of a better combined classifier, and the difficulty of classifying the ‘MCI’ class where there is maximum ‘bleeding in’ from other categories.
-<hr>
 
-### Visualizations
+<br/> <br/>
+
+
+
+## Visualizations
+
+
+
+<br/>
 
 #### 1. Which of the tests (MMSE, RAVLT, FAQ) are correlated?
 
@@ -126,6 +135,8 @@ plt.show()
 
 
 > There seems to be a relationship between each of the tests, most notably FAQ and MMSE.
+
+<br/> <br/>
 
 #### 2. What are the inherent biases in the tests that may skew the diagnosis?
 
@@ -253,6 +264,8 @@ plt.show()
 
 > Marriage seems to have an effect on RAVLT scores, and years of education has a clear relationship with the test as well. 
 
+<br/> <br/>
+
 #### 3. Do any individual tests directly correlate with the degeneration of a specific area of the brain?
 
 
@@ -347,6 +360,8 @@ ax[2,4].set_xlabel("Fusiform")
 > It is clear that the degeneration of the Mid Temporal, Hippocampus, and Fusiform regions is correlated with scores on the MMSE, FAQ, and RAVLT cognitive tests. 
 > (Note: in the above charts, green data points are patients classified as ‘Cognitively Normal’, while blue points are patients classified as ‘Alzheimer’s Disease’.)
 
+<br/> <br/>
+
 #### 4. What are the general trends with the demographic data? 
 
 
@@ -393,6 +408,7 @@ plt.show()
 
 ![png](eda_files/eda_16_0.png)
 
+<br/> <br/>
 
 #### 5. Since the data is longitudinal, what scores actually change over time and different tests?
 
