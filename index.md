@@ -24,8 +24,6 @@ Early detection of Alzheimer's can greatly impact the potency of any therapy. Th
 
 The Alzheimer’s Disease Neuroimaging Initiative (ADNI) data used in this project and curated by [USC](http://adni.loni.usc.edu/), also provides the [Procedures Manual](http://adni.loni.usc.edu/wp-content/uploads/2012/10/ADNI3-Procedures-Manual_v3.0_20170627.pdf) containing literature about the protocol used to conduct each cognitive tests used. 
 
-ADAS-11, ECog SP, ECog PT — ADS 13
-
 Other web and journal-based resources referred are:
 
 1. Moradi, Hallikainen, Hänninen, & Tohka. (2017). Rey's Auditory Verbal Learning Test scores can be predicted from whole brain MRI in Alzheimer's disease. NeuroImage: Clinical, 13, 415-427. 
