@@ -1,6 +1,7 @@
 ---
 title: EDA
 notebook: olives-eda.ipynb
+nav_include: 1
 ---
 
 ## Contents
@@ -30,8 +31,8 @@ I found this data set in the RGGobi book (http://www.ggobi.org/book/), from whic
 found in the lipid fraction of Italian olive oils', with oils from 3 regions of Italy: the North, the South, and Sardinia. The regions themselves are subdivided into areas as shown in the map above. The source for this data is:
 
 >Forina, M., Armanino, C., Lanteri, S. & Tiscornia, E. (1983), Classification of Olive Oils from their Fatty Acid Composition, in Martens, H. and
-Russwurm Jr., H., eds, Food Research and Data Analysis, Applied Science
-Publishers, London, pp. 189–214.
+>Russwurm Jr., H., eds, Food Research and Data Analysis, Applied Science
+>Publishers, London, pp. 189–214.
 
 ## Exploratory Viz
 
@@ -51,11 +52,11 @@ df.head()
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -177,11 +178,11 @@ pd.crosstab(df.areastring, df.regionstring)
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -314,11 +315,11 @@ dfbymean.head()
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -491,11 +492,11 @@ dfsouth.head()
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
