@@ -19,16 +19,14 @@ Early detection of Alzheimer's can greatly impact the potency of any therapy. In
 
 ## Literature Review and Related Work
 
+The Alzheimer’s Disease Neuroimaging Initiative (ADNI) data used in this project and curated by [USC](http://adni.loni.usc.edu/), also provides the [Procedures Manual](http://adni.loni.usc.edu/wp-content/uploads/2012/10/ADNI3-Procedures-Manual_v3.0_20170627.pdf) containing literature about the protocol used to conduct each cognitive tests used. 
 
-
-Hello World
-
-
+ADAS-11, ECog SP, ECog PT — ADS 13
 
 
 
 ## Team
 
-* [Mehul Smriti Raje](https://github.com/mraje16) (ME in CSE, SEAS)
-* [Agasthya Shenoy](https://github.com/agasthyaps) (MEd, GSEd)
-* [Neeti Nayak](https://github.com/neetinayak) (MDE, GSD)
+* [Mehul Smriti Raje](https://github.com/mraje16) (ME in CSE, SEAS, Harvard University)
+* [Agasthya Shenoy](https://github.com/agasthyaps) (MEd, GSEd, Harvard University)
+* [Neeti Nayak](https://github.com/neetinayak) (MDE, GSD, Harvard University)
