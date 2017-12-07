@@ -6,7 +6,7 @@ nav_include: 3
 
 ## Results, Conclusions, and Future Work
 
-![alt text](notebooks/model.jpg "Model"){: margin: 20px;}
+![alt text](https://github.com/mraje16/cs109-final_project/blob/master/notebooks/model.JPG "Model"){: margin: 20px;}
 
 The figure proposed above summarizes the final algorithm we proposed to detect and classify the different stages of dementia. The strength of the result is that it can give a more thorough classification of MCI, and can be a single comprehensive test score to determine future course of treatment. The weakness of the test lies in the lack of a predictive ability, i.e. while it can classify the patient based on the current tests and other information, it cannot determine the prospective diagnosis over the coming months, which is a vital point of consideration especially for Alzheimer’s patients. 
 
