@@ -1,6 +1,6 @@
 theme: jekyll-theme-primer
-title: Alzheimer’s Disease and Cognitive Impairment Prediction
-description: CS 109 A Project
+title: Home  #Support Vector Olives
+description: Keeping Italian Olives Pure!
 baseurl:
 markdown: kramdown
 kramdown:
