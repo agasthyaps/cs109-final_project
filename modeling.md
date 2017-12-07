@@ -34,12 +34,8 @@ nav_include: 2
 
 8. We finally generated the dataset with the predicted classifications.
 
-    ![alt text](notebooks/model.jpg "Model"){: margin: 20px; width:200px}
 
-    ​
-
-
-<br/><br/>
+<br/> <br/>
 ## Implementation
 
 
