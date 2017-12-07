@@ -1,5 +1,6 @@
 ---
 title: Alzheimer’s Disease and Cognitive Impairment Prediction
+nav_include:0
 ---
 
 
