@@ -24,10 +24,10 @@
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
-      <p style="color:616161; font-size: 20px; padding:10px;"> CS109A Data Science Group 73 </p>
+      <p style="color:616161; font-size: 20px;"> CS109A Data Science Group 73 </p>
       <nav class="group">
         {% if site.title and site.title != page.title %}
-           <a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
+        <a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
         {% endif %}
         {% assign navigation_pages = site.html_pages | sort: 'nav_include' %}
         {% for node in navigation_pages %}
